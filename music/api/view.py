@@ -25,7 +25,9 @@ class MusicViewSet(viewsets.ModelViewSet):
     def retrieve(self, request, *args, **kwargs):
         instance = self.get_object()
         file_url = request.build_absolute_uri(instance.file.url)
+        cover_url = request.build_absolute_uri(instance.cover.url)
+
         instance = model_to_dict(instance)
         instance["file"] = file_url
-        
+        instance["cover"] = cover_url
         return Response(instance)
