@@ -31,4 +31,3 @@ class Music(models.Model):
     cover = models.ImageField(upload_to=rename_cover, validators=[validate_cover_file])
     duration = models.CharField(max_length=255)
     lyric = models.TextField()
-
