@@ -6,5 +6,4 @@ class MusicSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Music
-        fields = ("url", "name", "artist", "duration", "cover")
-
+        fields = ("url", "name", "artist", "duration", "cover", "file", "lyric")

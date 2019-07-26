@@ -4,7 +4,7 @@ from music.models import *
 from .serializers import MusicSerializer
 from rest_framework.exceptions import NotFound
 from rest_framework.response import Response
-
+from rest_framework.decorators import api_view
 
 
 class MusicViewSet(viewsets.ModelViewSet):
@@ -31,3 +31,9 @@ class MusicViewSet(viewsets.ModelViewSet):
         instance["file"] = file_url
         instance["cover"] = cover_url
         return Response(instance)
+
+
+@api_view(["GET"])
+def stream_music(request):
+    print("\n\n\n")
+    print(request)
